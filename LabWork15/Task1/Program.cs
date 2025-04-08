@@ -14,6 +14,7 @@
             option = Module;
             Console.WriteLine(option.Invoke(-10));
             Task4();
+            Task5();
         }
 
         static void Task4()
@@ -29,7 +30,26 @@
             }
         }
 
+        static void Task5()
+        {
+            Console.WriteLine("\nTask5");
+
+            Option[] options = [
+                Raise, Factorial, Module
+                ];
+
+            foreach (Option option in options)
+            {
+                InvokeDelegate(option, 5);
+            }
+        }
+
         delegate int Option(int value);
+
+        static void InvokeDelegate(Option option, int value)
+            => Console.WriteLine(option?.Invoke(value));
+
+        #region Экземпляры
 
         static int Raise(int value)
             => value * value;
@@ -50,5 +70,6 @@
         static int Module(int value)
             => Math.Abs(value);
 
+        #endregion
     }
 }
