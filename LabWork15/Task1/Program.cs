@@ -25,7 +25,7 @@
 
             foreach (Option option in options)
             {
-                Console.WriteLine(option.Invoke(5)); 
+                Console.WriteLine(option.Invoke(5));
             }
         }
 
@@ -38,7 +38,7 @@
         {
             if (value < 0)
                 return -1;
-            
+
             int result = 1;
             for (int i = value; i > 0; i--)
             {

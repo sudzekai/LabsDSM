@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Task2
+namespace Task3
 {
     public partial class ReplaceForm : Form
     {

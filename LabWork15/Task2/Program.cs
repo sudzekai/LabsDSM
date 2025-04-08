@@ -1,17 +1,33 @@
-namespace Task2
+﻿namespace Task2
 {
-    internal static class Program
+    internal class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            Application.Run(new MainForm());
+            Option option = Sum;
+            option += Divide;
+            option += Multiplicate;
+            option += Subtract;
+            option.Invoke(10, 2);
+        }
+
+        delegate void Option(int firstNumber, int secondNumber);
+
+        static void Sum(int firstNumber, int secondNumber)
+        {
+            Console.WriteLine($"{firstNumber} + {secondNumber} = {firstNumber + secondNumber}");
+        }
+        static void Divide(int firstNumber, int secondNumber)
+        {
+            Console.WriteLine($"{firstNumber} / {secondNumber} = {firstNumber / secondNumber}");
+        }
+        static void Multiplicate(int firstNumber, int secondNumber)
+        {
+            Console.WriteLine($"{firstNumber} * {secondNumber} = {firstNumber * secondNumber}");
+        }
+        static void Subtract(int firstNumber, int secondNumber)
+        {
+            Console.WriteLine($"{firstNumber} - {secondNumber} = {firstNumber - secondNumber}");
         }
     }
 }
